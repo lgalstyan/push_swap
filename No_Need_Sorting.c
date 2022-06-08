@@ -56,7 +56,22 @@ int CheckSorted(int *arr,int len)
         i++;
     }
     return (1);
-}/*
+}
+
+int CheckSortedStack(t_stack **a)
+{
+    t_stack *arr;
+
+    arr = *a;
+    while(arr->next)
+    {
+        if(arr -> data > arr -> next -> data)
+            return(0);
+        arr = arr -> next;
+    }
+    return (1);
+}
+/*
 int main()
 {
     int i = 0;

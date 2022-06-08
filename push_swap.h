@@ -13,6 +13,8 @@ typedef struct s_stack
 //deleted
 void print(t_stack **a, t_stack **b);
 //deleted
+
+
 void push(t_stack **n, int d);
 void pa(t_stack **a, t_stack **b);
 void pb(t_stack **a, t_stack **b);
@@ -29,6 +31,14 @@ void rra(t_stack **a);
 void rrb(t_stack **b);
 void rrr(t_stack **a, t_stack **b);
 void MainSort(t_stack **a, t_stack **b, int len);
+void sort3(t_stack **a);
+void sort2(t_stack **a);
+void sort4(t_stack **a, t_stack **b);
+void sort5(t_stack **a, t_stack **b);
+int FindIndex(t_stack **a, int min);
+int max(t_stack **s);
+int min(t_stack **s);
+int mid(t_stack **a, int n);
 
 int	ft_atoi(char *str);
 int *ft_split(char *s);
