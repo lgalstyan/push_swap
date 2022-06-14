@@ -2,11 +2,14 @@
 
 int count_stack(t_stack **a)
 {
-    int i = 1;
     t_stack *cur;
+    int i;
     
+	i = 0;
     cur = *a;
-    while(cur -> next)
+	if(!a)
+		return(0);
+    while(cur)
     {
         cur = cur -> next;
         i++;
@@ -21,7 +24,7 @@ int FindIndex(t_stack **a, int min)
 
     cur = *a;
     i = 0;
-    while(cur-> next)
+    while(cur)
     {
         if(cur -> data == min)
             return(i);
@@ -30,6 +33,22 @@ int FindIndex(t_stack **a, int min)
         cur = cur -> next;
     }
     return(i);
+}
+
+int max_index(t_stack **st)
+{
+	t_stack *cur;
+	int max;
+
+	cur = *st;
+	max = cur->index;
+	while(cur)
+	{
+		if(cur->index > max)
+			max = cur->index;
+		cur = cur->next;
+	}
+	return(max);
 }
 
 int max(t_stack **s)

@@ -3,15 +3,18 @@
 static void revrotate(t_stack **st)
 {
     int dat;
+	int ind;
     t_stack *cur;
+
     cur = *st;
     while(cur -> next -> next)
     {
         cur = cur -> next;
     }
     dat = cur -> next -> data;
+	ind = cur -> next -> index;
     cur -> next = NULL;
-    push(st, dat);
+    push_for_push(st, dat, ind);
 }
 
 void rra(t_stack **a)

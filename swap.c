@@ -1,44 +1,69 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   swap.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lgalstya <lgalstya@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/11 14:02:11 by lgalstya          #+#    #+#             */
+/*   Updated: 2022/06/11 14:06:01 by lgalstya         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-static void swap(t_stack **n)
+static void	swap(t_stack **n)
 {
-    t_stack *cur = *n;
-    if(cur -> next)
-    {
-        int swp = cur -> data;
-        cur -> data = cur -> next -> data;
-        cur -> next -> data = swp;
-    }
+	int		swp;
+	t_stack	*cur;
+
+	cur = *n;
+	if (cur -> next)
+	{
+		swp = cur -> data;
+		cur -> data = cur -> next -> data;
+		cur -> next -> data = swp;
+		swp = cur -> index;
+		cur -> index = cur -> next -> index;
+		cur -> next -> index = swp;
+	}
 }
 
-void sa(t_stack **a)
+void	sa(t_stack **a)
 {
-    t_stack *cur = *a;
-    if(cur && cur -> next)
-    {
-       swap(a); 
-       write(1, "sa\n", 3);
-    }
+	t_stack	*cur;
+
+	cur = *a;
+	if (cur && cur -> next)
+	{
+		swap(a);
+		write(1, "sa\n", 3);
+	}
 }
 
-void sb(t_stack **b)
+void	sb(t_stack **b)
 {
-    t_stack *cur = *b;
-    if(cur && cur -> next)
-    {
-       swap(b); 
-       write(1, "sb\n", 3);
-    }
+	t_stack	*cur;
+
+	cur = *b;
+	if (cur && cur -> next)
+	{
+		swap(b);
+		write(1, "sb\n", 3);
+	}
 }
 
-void ss(t_stack **a, t_stack **b)
+void	ss(t_stack **a, t_stack **b)
 {
-    t_stack *cur1 = *a;
-    t_stack *cur2 = *b;
-    if(cur1 && cur1 -> next && cur2 && cur2 -> next)
-    {
-       swap(a);
-       swap(b);
-       write(1, "ss\n", 3);
-    }
+	t_stack	*cur1;
+	t_stack	*cur2;
+
+	cur1 = *a;
+	cur2 = *b;
+	if (cur1 && cur1 -> next && cur2 && cur2 -> next)
+	{
+		swap(a);
+		swap(b);
+		write(1, "ss\n", 3);
+	}
 }

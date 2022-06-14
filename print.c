@@ -9,14 +9,15 @@ void print(t_stack **a, t_stack **b)
     {
         if(cur1)
         {
-            printf("%d", cur1 -> data);
+            printf(" %d,  index = %d\n", cur1 -> data, cur1->index);
             cur1 = cur1 -> next;
         }
         printf("  ");
         if(cur2)
         {
-            printf(" %d", cur2 -> data);
+            printf(" %d, index =%d \n", cur2 -> data, cur2->index);
             cur2 = cur2 -> next;
+
         }    
         printf("\n");
     }

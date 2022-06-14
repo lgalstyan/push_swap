@@ -14,16 +14,6 @@ int IsDigit(char *c)
     return (1);
 }
 
-/*int CheckSorted(int *arr,int len)
-{
-    if (len == 1 || len == 0)
-        return (1);
-    if (arr[len - 1] > arr[len - 2])
-        return (0);
-    return CheckSorted(arr, len - 1);
-}*/
-
-
 int RepeatMember(int *arr, int len)
 {
     int i;

@@ -3,8 +3,11 @@
 static void rotate(t_stack **st)
 {
     int dat;
+	int ind;
     t_stack *cur;
+
     cur = *st;
+	ind = cur ->index;
     dat = cur -> data;
     cur = cur -> next;
     *st = cur;
@@ -17,6 +20,7 @@ static void rotate(t_stack **st)
     if(!new)
         return ;
     new -> data = dat; 
+	new -> index = ind;
     new -> next = NULL;
     cur -> next = new;
 
