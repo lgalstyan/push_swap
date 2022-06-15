@@ -14,15 +14,19 @@ int IsDigit(char *c)
     return (1);
 }
 
-int RepeatMember(int *arr, int len)
+int RepeatMember(long *arr, int len)
 {
     int i;
     int j;
 
     i = 0;
     j = 0;
+	if((arr[i] > -21474836900000000 && arr[i] < -2147483648) || (arr[i] > 2147483647 && arr[i] < 214748369000000000))
+			return(0);
     while(i < len - 1)
     {
+		if(arr[i] < -2147483648 || arr[i] > 2147483647)
+			return(0);
         j = i + 1;
         while(j < len)
         {
@@ -35,7 +39,7 @@ int RepeatMember(int *arr, int len)
     return (1);
 }
 
-int CheckSorted(int *arr,int len)
+int CheckSorted(long *arr,int len)
 {
     int i;
     i = 0;

@@ -14,7 +14,7 @@
 
 void	start(t_stack **a, t_stack **b, int argc, char **argv)
 {
-	int		*arr;
+	long	*arr;
 	char	*str;
 	int		len;
 	int		i;
@@ -26,7 +26,7 @@ void	start(t_stack **a, t_stack **b, int argc, char **argv)
 	if (!(RepeatMember(arr, len)) || !(IsDigit(str)))
 	{
 		print_error();
-		exit(0);
+		Destructor(a);
 	}
 	else if (CheckSorted(arr, len))
 		exit(0);
@@ -71,6 +71,6 @@ int	main(int argc, char **argv)
 	//sleep(1000);
 	Destructor(a);
 	Destructor(b);
-	sleep(1000);
+	//sleep(1000);
 	return (0);
 }

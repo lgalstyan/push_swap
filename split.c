@@ -25,11 +25,11 @@ int WordCount(char *s)
 return (count);
 }
 
-int	ft_atoi(char *str)
+long	ft_atoi(char *str)
 {
-	int	c;
-	int	n;
-	int	min;
+	long	c;
+	long	n;
+	long	min;
 
 	c = 0;
 	n = 0;
@@ -50,12 +50,12 @@ int	ft_atoi(char *str)
 	return (n * min);
 }
 
-static int    wordM(char *s, int st, int en)
+static long    wordM(char *s, int st, int en)
 {
     char *a;
     int i = 0;
     int len = en -st;
-    int res =0;
+    long res =0;
     a = malloc(len + 1);
     if(!a)
         return (0);
@@ -75,12 +75,12 @@ static int    wordM(char *s, int st, int en)
 return (res);
 }
 
-int *ft_split(char *str)
+long *ft_split(char *str)
 {
     int i = 0;
     int start = 0;
     int end = 0;
-    int   *matrix;
+    long   *matrix;
     matrix = malloc(sizeof(int ) * WordCount(str) + 1);
     if(!str || !matrix)
         return (0);
