@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-static void revrotate(t_stack **st)
+void revrotate(t_stack **st)
 {
     int dat;
 	int ind;

@@ -40,23 +40,10 @@ void	start(t_stack **a, t_stack **b, int argc, char **argv)
 	}
 	add_indexes(a);
 	MainSort(a, b, len);
+	//free_array(&arr);
+	//free_str(&str);
 }
-
-void Destructor(t_stack **st)
-{
-	t_stack	*node;
-	t_stack *tmp;
-
-	tmp = *st;
-	while (tmp)
-	{
-		node = tmp;
-		tmp = tmp->next;
-			free(node);
-	}
-	free(st);
-}
-
+/*
 int	main(int argc, char **argv)
 {
 	t_stack		**a;
@@ -68,9 +55,8 @@ int	main(int argc, char **argv)
 	*b = NULL;
 	start(a, b, argc, argv);
 	//print(a, b);
-	//sleep(1000);
 	Destructor(a);
 	Destructor(b);
 	//sleep(1000);
 	return (0);
-}
+}*/

@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
+#include "libft.h"
 
 typedef struct s_stack
 {
@@ -20,15 +21,15 @@ void push(t_stack **a, t_stack **b);
 void push_for_push(t_stack **n, int d, int i);
 void pa(t_stack **a, t_stack **b);
 void pb(t_stack **a, t_stack **b);
-//void swap(t_stack **n);
+void swap(t_stack **n);
 void sa(t_stack **a);
 void sb(t_stack **b);
 void ss(t_stack **a, t_stack **b);
-//void rotate(t_stack **st);
+void rotate(t_stack **st);
 void ra(t_stack **a);
 void rb(t_stack **a);
 void rr(t_stack **a, t_stack **b);
-//void revrotate(t_stack **st);
+void revrotate(t_stack **st);
 void rra(t_stack **a);
 void rrb(t_stack **b);
 void rrr(t_stack **a, t_stack **b);
@@ -45,6 +46,7 @@ void sort_but(t_stack **a, t_stack **b, int n);
 void sort(t_stack **a, t_stack **b);
 int max_index(t_stack **st);
 
+void	start(t_stack **a, t_stack **b, int argc, char **argv);
 long	ft_atoi(char *str);
 long *ft_split(char *s);
 int WordCount(char *s);
@@ -57,5 +59,7 @@ int RepeatMember(long *arr, int len);
 int CheckSortedStack(t_stack **a);
 void add_indexes(t_stack **stack);
 void Destructor(t_stack **st);
+int	free_str(char **s);
+int	free_array(long **a);
 
 #endif
