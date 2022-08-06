@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   split.c                                            :+:      :+:    :+:   */
+/*   bonus_split.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgalstya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/01 15:14:22 by lgalstya          #+#    #+#             */
-/*   Updated: 2022/07/02 17:19:21 by lgalstya         ###   ########.fr       */
+/*   Created: 2022/07/04 15:17:19 by lgalstya          #+#    #+#             */
+/*   Updated: 2022/07/04 15:18:05 by lgalstya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
 int	word_count(char *s)
 {
@@ -85,7 +85,7 @@ static	int	wordm(char *s, int st, int en)
 		i++;
 	}
 	a[i] = 0;
-	if (check_critical_values(a) == 0)
+	if (!check_critical_values(a))
 		print_error();
 	res = ft_atoi(a);
 	free(a);

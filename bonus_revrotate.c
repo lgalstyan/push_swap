@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   revrotate.c                                        :+:      :+:    :+:   */
+/*   bonus_revrotate.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgalstya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/30 17:53:46 by lgalstya          #+#    #+#             */
-/*   Updated: 2022/06/30 17:57:17 by lgalstya         ###   ########.fr       */
+/*   Created: 2022/07/04 15:16:26 by lgalstya          #+#    #+#             */
+/*   Updated: 2022/07/04 15:16:31 by lgalstya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
-static void	revrotate(t_stack **st)
+void	revrotate(t_stack **st)
 {
 	int		dat;
 	int		ind;
@@ -35,7 +35,6 @@ void	rra(t_stack **a)
 	if ((*a) && (*a)->next)
 	{
 		revrotate(a);
-		write(1, "rra\n", 4);
 	}
 }
 
@@ -44,7 +43,6 @@ void	rrb(t_stack **b)
 	if ((*b) && (*b)->next)
 	{
 		revrotate(b);
-		write(1, "rrb\n", 4);
 	}
 }
 
@@ -54,6 +52,5 @@ void	rrr(t_stack **a, t_stack **b)
 	{
 		revrotate(a);
 		revrotate(b);
-		write(1, "rrr\n", 4);
 	}
 }

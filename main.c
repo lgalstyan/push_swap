@@ -6,7 +6,7 @@
 /*   By: lgalstya <lgalstya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 13:42:15 by lgalstya          #+#    #+#             */
-/*   Updated: 2022/06/11 13:54:32 by lgalstya         ###   ########.fr       */
+/*   Updated: 2022/07/02 17:16:32 by lgalstya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,36 +14,46 @@
 
 void	start(t_stack **a, t_stack **b, int argc, char **argv)
 {
-	long	*arr;
+	int		*arr;
 	char	*str;
 	int		len;
 	int		i;
 
 	str = join(argc, argv);
-	len = WordCount(str);
+	len = word_count(str);
 	arr = ft_split(str);
 	i = len - 1;
-	if (!(RepeatMember(arr, len)) || !(IsDigit(str)))
+	if (!(is_digit(str)) || !(repeat_member(arr, len)))
 	{
 		print_error();
-		Destructor(a);
+		destructor(a);
 	}
-	else if (CheckSorted(arr, len))
+	else if (check_sorted(arr, len))
 		exit(0);
 	else
-	{
 		while (i >= 0)
-		{
-			push_for_push(a, arr[i], -1);
-			i--;
-		}
-	}
+			push_for_push(a, arr[i--], -1);
+	free(str);
+	free(arr);
 	add_indexes(a);
-	MainSort(a, b, len);
-	//free_array(&arr);
-	//free_str(&str);
+	main_sort(a, b, len);
 }
-/*
+
+void	destructor(t_stack **st)
+{
+	t_stack		*node;
+	t_stack		*tmp;
+
+	tmp = *st;
+	while (tmp)
+	{
+		node = tmp;
+		tmp = tmp->next;
+		free(node);
+	}
+	free(st);
+}
+
 int	main(int argc, char **argv)
 {
 	t_stack		**a;
@@ -54,9 +64,7 @@ int	main(int argc, char **argv)
 	*a = NULL;
 	*b = NULL;
 	start(a, b, argc, argv);
-	//print(a, b);
-	Destructor(a);
-	Destructor(b);
-	//sleep(1000);
+	destructor(a);
+	free(b);
 	return (0);
-}*/
+}

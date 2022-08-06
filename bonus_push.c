@@ -6,11 +6,11 @@
 /*   By: lgalstya <lgalstya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 14:06:37 by lgalstya          #+#    #+#             */
-/*   Updated: 2022/06/30 17:53:28 by lgalstya         ###   ########.fr       */
+/*   Updated: 2022/07/04 15:16:08 by lgalstya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
 void	push_for_push(t_stack **n, int d, int i)
 {
@@ -53,12 +53,10 @@ void	push(t_stack **a, t_stack **b)
 
 void	pa(t_stack **a, t_stack **b)
 {
-	push(b, a);
-	write(1, "pa\n", 3);
+	push(a, b);
 }
 
 void	pb(t_stack **a, t_stack **b)
 {
 	push(a, b);
-	write(1, "pb\n", 3);
 }

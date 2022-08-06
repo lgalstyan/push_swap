@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   swap_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgalstya <lgalstya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 14:02:11 by lgalstya          #+#    #+#             */
-/*   Updated: 2022/06/11 14:06:01 by lgalstya         ###   ########.fr       */
+/*   Updated: 2022/06/27 17:37:20 by lgalstya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
-static void	swap(t_stack **n)
+void	swap(t_stack **n)
 {
 	int		swp;
 	t_stack	*cur;
@@ -35,10 +35,7 @@ void	sa(t_stack **a)
 
 	cur = *a;
 	if (cur && cur -> next)
-	{
 		swap(a);
-		write(1, "sa\n", 3);
-	}
 }
 
 void	sb(t_stack **b)
@@ -47,10 +44,7 @@ void	sb(t_stack **b)
 
 	cur = *b;
 	if (cur && cur -> next)
-	{
 		swap(b);
-		write(1, "sb\n", 3);
-	}
 }
 
 void	ss(t_stack **a, t_stack **b)
@@ -64,6 +58,5 @@ void	ss(t_stack **a, t_stack **b)
 	{
 		swap(a);
 		swap(b);
-		write(1, "ss\n", 3);
 	}
 }
